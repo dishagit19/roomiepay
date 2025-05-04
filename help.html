@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoomiePay | Help</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1><i class="fas fa-home"></i> RoomiePay</h1>
+        <button id="sidebar-toggle" class="sidebar-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="sidebar-content">
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+            </li>
+            <li>
+              <a href="roommates.html"><i class="fas fa-users"></i> Roommates</a>
+            </li>
+            <li>
+              <a href="expenses.html"><i class="fas fa-receipt"></i> Expenses</a>
+            </li>
+            <li>
+              <a href="payments.html"><i class="fas fa-money-bill-wave"></i> Payments</a>
+            </li>
+            <li>
+              <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+            </li>
+            <li class="active">
+              <a href="help.html"><i class="fas fa-question-circle"></i> Help</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="btn btn-outline">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="content-header">
+        <h1>Help</h1>
+        <div class="user-info">
+          <span id="username-display">Admin</span>
+          <button id="mobile-sidebar-toggle" class="sidebar-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-body">
+        <div class="card">
+          <div class="card-header">
+            <h2>How to Use RoomiePay</h2>
+          </div>
+          <div class="card-body">
+            <div class="help-section">
+              <h3><i class="fas fa-chart-line"></i> Dashboard</h3>
+              <p>The Dashboard provides an overview of your household finances:</p>
+              <ul>
+                <li>View total expenses and payments</li>
+                <li>See roommate balances at a glance</li>
+                <li>Track expense trends over time</li>
+              </ul>
+            </div>
+
+            <div class="help-section">
+              <h3><i class="fas fa-users"></i> Roommates</h3>
+              <p>Manage all roommates in your household:</p>
+              <ul>
+                <li>View all roommates and their current balances</li>
+                <li>Add new roommates</li>
+                <li>Edit roommate details</li>
+              </ul>
+            </div>
+
+            <div class="help-section">
+              <h3><i class="fas fa-receipt"></i> Expenses</h3>
+              <p>Track and manage household expenses:</p>
+              <ul>
+                <li>View all household expenses</li>
+                <li>Add new expenses and assign contributors</li>
+                <li>Filter expenses by date or category</li>
+              </ul>
+            </div>
+
+            <div class="help-section">
+              <h3><i class="fas fa-money-bill-wave"></i> Payments</h3>
+              <p>Record and track payments:</p>
+              <ul>
+                <li>Track payments made by roommates</li>
+                <li>Add new payments</li>
+                <li>View payment history by roommate</li>
+              </ul>
+            </div>
+
+            <div class="help-section">
+              <h3><i class="fas fa-chart-bar"></i> Reports</h3>
+              <p>Analyze household expenses:</p>
+              <ul>
+                <li>View expenses by roommate</li>
+                <li>Analyze expense distribution by category</li>
+                <li>Track monthly expense trends</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Frequently Asked Questions</h2>
+          </div>
+          <div class="card-body">
+            <div class="accordion" id="faq-accordion">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    How are balances calculated?
+                  </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show">
+                  <div class="accordion-body">
+                    <p>Balances are calculated based on expenses and payments:</p>
+                    <ul>
+                      <li>When an expense is added and assigned to roommates, each person's balance increases (they owe money)</li>
+                      <li>When a payment is recorded, the roommate's balance decreases (they've paid money)</li>
+                      <li>Positive balance means the roommate owes money</li>
+                      <li>Negative balance means the roommate is owed money</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    How do I add a new expense?
+                  </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <ol>
+                      <li>Go to the Expenses page</li>
+                      <li>Scroll down to the "Add New Expense" form</li>
+                      <li>Fill in the expense details (name, amount, date, etc.)</li>
+                      <li>Select the roommates who contributed to this expense</li>
+                      <li>Click "Add Expense" to save</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    How do I record a payment?
+                  </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse">
+                  <div class="accordion-body">
+                    <ol>
+                      <li>Go to the Payments page</li>
+                      <li>Scroll down to the "Add New Payment" form</li>
+                      <li>Select the roommate who made the payment</li>
+                      <li>Enter the payment amount and date</li>
+                      <li>Select the payment method</li>
+                      <li>Click "Add Payment" to save</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script src="js/help.js"></script>
+</body>
+</html>

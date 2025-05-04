@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoomiePay | Expenses</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1><i class="fas fa-home"></i> RoomiePay</h1>
+        <button id="sidebar-toggle" class="sidebar-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="sidebar-content">
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+            </li>
+            <li>
+              <a href="roommates.html"><i class="fas fa-users"></i> Roommates</a>
+            </li>
+            <li class="active">
+              <a href="expenses.html"><i class="fas fa-receipt"></i> Expenses</a>
+            </li>
+            <li>
+              <a href="payments.html"><i class="fas fa-money-bill-wave"></i> Payments</a>
+            </li>
+            <li>
+              <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+            </li>
+            <li>
+              <a href="help.html"><i class="fas fa-question-circle"></i> Help</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="btn btn-outline">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="content-header">
+        <h1>Expenses</h1>
+        <div class="user-info">
+          <span id="username-display">Admin</span>
+          <button id="mobile-sidebar-toggle" class="sidebar-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-body">
+        <div class="card">
+          <div class="card-header">
+            <h2>Expense List</h2>
+            <div class="card-actions">
+              <div class="form-group">
+                <input type="text" id="expense-search" placeholder="Search expenses...">
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Total Cost</th>
+                    <th>Contributors</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="expenses-table">
+                  <tr>
+                    <td colspan="6" class="text-center">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Add New Expense</h2>
+          </div>
+          <div class="card-body">
+            <form id="add-expense-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="expense-name">Name</label>
+                  <input type="text" id="expense-name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="expense-date">Date</label>
+                  <input type="date" id="expense-date" name="date" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="expense-description">Description</label>
+                <textarea id="expense-description" name="description" rows="2"></textarea>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="expense-cost">Total Cost</label>
+                  <input type="number" id="expense-cost" name="total_cost" step="0.01" required>
+                </div>
+                <div class="form-group">
+                  <label for="expense-category">Category</label>
+                  <select id="expense-category" name="category">
+                    <option value="Groceries">Groceries</option>
+                    <option value="Utilities">Utilities</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Furniture">Furniture</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Contributors</label>
+                <div id="contributors-checkboxes" class="checkbox-group">
+                  <div class="loading-spinner small"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Add Expense</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script src="js/expenses.js"></script>
+</body>
+</html>

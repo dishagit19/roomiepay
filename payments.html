@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoomiePay | Payments</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1><i class="fas fa-home"></i> RoomiePay</h1>
+        <button id="sidebar-toggle" class="sidebar-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="sidebar-content">
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+            </li>
+            <li>
+              <a href="roommates.html"><i class="fas fa-users"></i> Roommates</a>
+            </li>
+            <li>
+              <a href="expenses.html"><i class="fas fa-receipt"></i> Expenses</a>
+            </li>
+            <li class="active">
+              <a href="payments.html"><i class="fas fa-money-bill-wave"></i> Payments</a>
+            </li>
+            <li>
+              <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+            </li>
+            <li>
+              <a href="help.html"><i class="fas fa-question-circle"></i> Help</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="btn btn-outline">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="content-header">
+        <h1>Payments</h1>
+        <div class="user-info">
+          <span id="username-display">Admin</span>
+          <button id="mobile-sidebar-toggle" class="sidebar-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-body">
+        <div class="card">
+          <div class="card-header">
+            <h2>Payment History</h2>
+            <div class="card-actions">
+              <div class="form-group">
+                <select id="roommate-filter">
+                  <option value="">All Roommates</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Roommate</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th>Mode</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="payments-table">
+                  <tr>
+                    <td colspan="5" class="text-center">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Add New Payment</h2>
+          </div>
+          <div class="card-body">
+            <form id="add-payment-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="payment-roommate">Roommate</label>
+                  <select id="payment-roommate" name="roommate_id" required>
+                    <option value="">Select Roommate</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="payment-date">Date</label>
+                  <input type="date" id="payment-date" name="date" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="payment-amount">Amount</label>
+                  <input type="number" id="payment-amount" name="amount" step="0.01" required>
+                </div>
+                <div class="form-group">
+                  <label for="payment-mode">Payment Mode</label>
+                  <select id="payment-mode" name="mode">
+                    <option value="Cash">Cash</option>
+                    <option value="Venmo">Venmo</option>
+                    <option value="Bank Transfer">Bank Transfer</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Add Payment</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script src="js/payments.js"></script>
+</body>
+</html>

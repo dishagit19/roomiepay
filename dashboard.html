@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RoomiePay | Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h1><i class="fas fa-home"></i> RoomiePay</h1>
+        <button id="sidebar-toggle" class="sidebar-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <div class="sidebar-content">
+        <nav class="sidebar-nav">
+          <ul>
+            <li class="active">
+              <a href="dashboard.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+            </li>
+            <li>
+              <a href="roommates.html"><i class="fas fa-users"></i> Roommates</a>
+            </li>
+            <li>
+              <a href="expenses.html"><i class="fas fa-receipt"></i> Expenses</a>
+            </li>
+            <li>
+              <a href="payments.html"><i class="fas fa-money-bill-wave"></i> Payments</a>
+            </li>
+            <li>
+              <a href="reports.html"><i class="fas fa-chart-bar"></i> Reports</a>
+            </li>
+            <li>
+              <a href="help.html"><i class="fas fa-question-circle"></i> Help</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="sidebar-footer">
+        <button id="logout-btn" class="btn btn-outline">
+          <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <header class="content-header">
+        <h1>Dashboard</h1>
+        <div class="user-info">
+          <span id="username-display">Admin</span>
+          <button id="mobile-sidebar-toggle" class="sidebar-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </header>
+
+      <div class="content-body">
+        <!-- Stats Cards -->
+        <div class="stats-container">
+          <div class="stats-card pastel-blue">
+            <div class="stats-icon">
+              <i class="fas fa-receipt"></i>
+            </div>
+            <div class="stats-info">
+              <h3>Total Expenses</h3>
+              <p id="total-expenses">Loading...</p>
+            </div>
+          </div>
+
+          <div class="stats-card pastel-green">
+            <div class="stats-icon">
+              <i class="fas fa-money-bill-wave"></i>
+            </div>
+            <div class="stats-info">
+              <h3>Total Payments</h3>
+              <p id="total-payments">Loading...</p>
+            </div>
+          </div>
+
+          <div class="stats-card pastel-purple">
+            <div class="stats-icon">
+              <i class="fas fa-balance-scale"></i>
+            </div>
+            <div class="stats-info">
+              <h3>Net Balance</h3>
+              <p id="net-balance">Loading...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Roommate Balances -->
+        <div class="card">
+          <div class="card-header">
+            <h2>Roommate Balances</h2>
+          </div>
+          <div class="card-body">
+            <div id="roommate-balances-chart" class="chart-container">
+              <div class="loading-spinner"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Expenses -->
+        <div class="card">
+          <div class="card-header">
+            <h2>Recent Expenses</h2>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Contributors</th>
+                  </tr>
+                </thead>
+                <tbody id="recent-expenses-table">
+                  <tr>
+                    <td colspan="4" class="text-center">Loading...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monthly Trends -->
+        <div class="card">
+          <div class="card-header">
+            <h2>Monthly Expense Trends</h2>
+          </div>
+          <div class="card-body">
+            <div id="monthly-trends-chart" class="chart-container">
+              <div class="loading-spinner"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/sidebar.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
